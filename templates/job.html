@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ job["title"] }} | شغلني{% endblock %}
+{% block content %}
+<div class="job-detail">
+<h1>{{ job["title"] }}</h1>
+<p>{{ job["description"] }}</p>
+<div class="price">{{ job["price"] }} جنيه</div>
+<p>صاحب الشغلة: {{ job["username"] }}</p>
+{% if current_user %}
+<form method="post" action="{{ url_for('interest', job_id=job['id']) }}">
+<button>❤️ أنا مهتم</button>
+</form>
+{% else %}
+<a class="button" href="{{ url_for('login') }}">سجل دخول عشان تبدي اهتمامك</a>
+{% endif %}
+<p class="note">الدفع والتعاملات المالية غير مفعّلة في النسخة التجريبية.</p>
+</div>
+{% endblock %}

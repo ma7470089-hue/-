@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}اعرض شغلك{% endblock %}
+{% block content %}
+<div class="form-card">
+<h1>➕ اعرض شغلك</h1>
+<form method="post">
+<input name="title" placeholder="اسم الشغلة" required>
+<textarea name="description" placeholder="وصف الشغلة بالتفصيل" required></textarea>
+<input name="price" type="number" min="0" placeholder="السعر بالجنيه" required>
+<button>نشر الشغلة 🚀</button>
+</form>
+</div>
+{% endblock %}

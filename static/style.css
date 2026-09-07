@@ -1,0 +1,24 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+header{background:#2563eb;color:white;padding:16px 0}
+.wrap{width:92%;max-width:1000px;margin:auto}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:15px}
+nav a,.nav a{color:white;text-decoration:none;margin:0 6px}
+.logo{font-size:26px;font-weight:bold}
+.hello{opacity:.9}
+.hero{background:white;margin:28px 0;padding:30px;border-radius:18px;box-shadow:0 4px 18px #dfe5ef}
+.hero h1{margin-top:0}
+.search{display:flex;gap:10px}
+input,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ccd3df;border-radius:10px;font-size:16px}
+textarea{min-height:130px}
+button,.button{display:inline-block;border:0;background:#2563eb;color:white;padding:12px 18px;border-radius:10px;text-decoration:none;cursor:pointer;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card,.form-card,.job-detail{background:white;padding:22px;border-radius:16px;box-shadow:0 3px 14px #dfe5ef}
+.card h3{color:#2563eb}
+.price{font-size:21px;font-weight:bold;color:#15803d;margin:12px 0}
+.card small{display:block;margin-bottom:15px;color:#667085}
+.form-card{max-width:600px;margin:30px auto}
+.flash{background:#e8f3ff;padding:12px;border-radius:10px;margin:18px 0}
+.note{margin-top:20px;color:#667085;font-size:14px}
+footer{text-align:center;padding:35px;color:#667085}
+@media(max-width:600px){.nav{flex-direction:column}.search{flex-direction:column}}

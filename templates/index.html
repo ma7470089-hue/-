@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}شغلني | الرئيسية{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>اعرض شغلك أو لاقي الشغلة المناسبة ليك 🚀</h1>
+  <p>منصة تجريبية لعرض الخدمات والبحث عنها.</p>
+  <form class="search" method="get">
+    <input name="q" value="{{ q }}" placeholder="ابحث عن شغلة...">
+    <button>بحث 🔎</button>
+  </form>
+</section>
+<h2>أحدث الشغل</h2>
+<div class="grid">
+{% for job in jobs %}
+  <article class="card">
+    <h3>{{ job["title"] }}</h3>
+    <p>{{ job["description"] }}</p>
+    <div class="price">{{ job["price"] }} جنيه</div>
+    <small>بواسطة {{ job["username"] }}</small>
+    <a class="button" href="{{ url_for('job', job_id=job['id']) }}">التفاصيل</a>
+  </article>
+{% else %}
+  <p>مفيش شغل متاح حاليًا.</p>
+{% endfor %}
+</div>
+{% endblock %}

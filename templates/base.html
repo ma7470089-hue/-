@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}شغلني{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="{{ url_for('home') }}">💼 شغلني</a>
+    <div>
+      {% if current_user %}
+        <span class="hello">أهلًا {{ current_user }}</span>
+        <a href="{{ url_for('add_job') }}">اعرض شغلك</a>
+        <a href="{{ url_for('logout') }}">خروج</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">دخول</a>
+        <a href="{{ url_for('register') }}">حساب جديد</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+<main class="wrap">
+{% with messages = get_flashed_messages() %}
+  {% for message in messages %}<div class="flash">{{ message }}</div>{% endfor %}
+{% endwith %}
+{% block content %}{% endblock %}
+</main>
+<footer>شغلني — نسخة تجريبية تعليمية</footer>
+</body>
+</html>
